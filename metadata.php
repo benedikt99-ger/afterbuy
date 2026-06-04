@@ -15,10 +15,10 @@ $sMetadataVersion = '2.1';
  */
 $aModule = [
     'id'          => 'nuenemann_afterbuy',
-    'title'       => 'afterbuy – ',
+    'title'       => 'afterbuy',
     'description' => 'Export order for afterbuy',
     'thumbnail'   => 'pictures/bn_logo.png',
-    'version'     => '5.1.0',
+    'version'     => '1.0.0',
     'author'      => 'Nünemann',
     'url'         => 'https://github.com/benedikt99-ger/afterbuy',
     'email'       => 'benedikt@nuenemann.de',
