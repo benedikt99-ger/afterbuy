@@ -13,6 +13,12 @@
     "require": {
         "php": "^8.2"
     },
+	"repositories": [
+        {
+            "type": "git",
+            "url": "https://github.com/benedikt99-ger/afterbuy"
+        }
+    ],
     "minimum-stability": "dev",
     "prefer-stable": true,
     "require-dev": {
@@ -44,7 +50,7 @@
     "autoload-dev": {
         "psr-4": {
             "OxidEsales\\ModuleTemplate\\Tests\\": "tests/",
-            "OxidEsales\\EshopCommunity\\Tests\\": "./vendor/oxid-esales/oxideshop-ce/tests"
+            "OxidEsales\\EshopCommunity\\Tests\\": "./vendor/benedikt99-ger/afterbuy/tests"
         }
     },
     "scripts": {
