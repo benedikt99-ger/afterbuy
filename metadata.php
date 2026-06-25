@@ -14,13 +14,15 @@ $sMetadataVersion = '2.1';
  * Module information
  */
 $aModule = [
-    'id'          => 'nuenemann_afterbuy',
+    'id'          => 'afterbuy',
     'title'       => 'afterbuy',
     'description' => 'Export order for afterbuy',
     'thumbnail'   => 'pictures/bn_logo.png',
-    'version'     => '1.0.0',
+    'version'     => '0.1.0',
     'author'      => 'Nünemann',
     'url'         => 'https://github.com/benedikt99-ger/afterbuy',
     'email'       => 'benedikt@nuenemann.de',
-    'extend'      => [],
+	'extend' => [
+		\\OxidEsales\\Eshop\\Application\\Model\\Order::class => benedikt99-ger\\afterbuy\\Model\\Order::class,
+	],
 ];
