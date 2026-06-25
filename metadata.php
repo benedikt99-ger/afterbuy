@@ -25,5 +25,10 @@ $aModule = [
 	'extend' => [
 		\\OxidEsales\\Eshop\\Application\\Model\\Order::class => benedikt99-ger\\afterbuy\\Model\\Order::class,
 	],
+    'settings' => [
+        array('group' => 'afterbuy_api',  'name' => 'sPartnerid',    'type' => 'str', 'value' => ''),
+        array('group' => 'afterbuy_api',  'name' => 'sPartnerPass',  'type' => 'str', 'value' => ''),
+		array('group' => 'afterbuy_api',  'name' => 'sUserID',       'type' => 'str', 'value' => ''),
+    ]	
 ];
 
