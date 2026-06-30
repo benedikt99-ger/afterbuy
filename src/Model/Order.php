@@ -7,7 +7,7 @@
 
 declare(strict_types=1);
 
-namespace benedikt99\afterbuy\Model;
+namespace nuenemann\afterbuy\Model;
 
 /**
  * @eshopExtension
