@@ -7,7 +7,7 @@
 
 declare(strict_types=1);
 
-namespace nuenemann\afterbuy\Controller;
+namespace nuenemann\AfterbuyExport\Controller;
 
 use OxidEsales\Eshop\Application\Model\Order as EshopOrder;
 use OxidEsales\Eshop\Core\Registry as EshopRegistry;
