@@ -10,10 +10,10 @@ $sMetadataVersion = '2.1';
  */
 $aModule = [
     'id'          => \nuenemann\AfterbuyExport\Module::MODULE_ID,
-    'title'       => 'Export Order to afterbuy',
+    'title'       => 'Export Bestellungen nach Afterbuy',
     'description' => 'Export Order to afterbuy',
     'thumbnail'   => 'bn_logo.png',
-    'version'     => '0.2.3',
+    'version'     => '0.3.0',
     'author'      => 'Nünemann',
     'url'         => 'https://github.com/benedikt99-ger/afterbuy',
     'email'       => 'benedikt@nuenemann.de',
