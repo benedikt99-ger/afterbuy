@@ -7,7 +7,7 @@
 
 declare(strict_types=1);
 
-namespace OxidEsales\ModuleTemplate\Controller;
+namespace benedikt99\afterbuy\Controller;
 
 use OxidEsales\Eshop\Application\Model\Order as EshopOrder;
 use OxidEsales\Eshop\Core\Registry as EshopRegistry;
