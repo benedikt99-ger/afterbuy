@@ -23,7 +23,7 @@ $aModule = [
     'url'         => 'https://github.com/benedikt99-ger/afterbuy',
     'email'       => 'benedikt@nuenemann.de',
 	'extend' => [
-		\OxidEsales\Eshop\Application\Model\Order::class => \benedikt99-ger\afterbuy\Model\Order::class,
+		\OxidEsales\Eshop\Application\Model\Order::class => \benedikt99\afterbuy\Model\Order::class,
 	],
     'settings' => [
         array('group' => 'afterbuy_api',  'name' => 'sPartnerid',    'type' => 'str', 'value' => ''),
