@@ -4,14 +4,12 @@
  * Copyright © benedikt nünemann. All rights reserved.
  */
 
-use benedikt99\afterbuy\Module;
-
 $sMetadataVersion = '2.1';
 /**
  * Module information
  */
 $aModule = [
-    'id'          =>  Module::MODULE_ID,
+    'id'          => 'benedikt99_afterbuy',
     'title'       => 'Export Order to afterbuy',
     'description' => 'Export Order to afterbuy',
     'thumbnail'   => 'bn_logo.png',
