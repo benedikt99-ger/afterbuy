@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace nuenemann\afterbuy;
+namespace nuenemann\AfterbuyExport;
 
 class Module
 {
