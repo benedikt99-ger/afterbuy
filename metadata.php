@@ -14,7 +14,7 @@ $sMetadataVersion = '2.1';
  * Module information
  */
 $aModule = [
-    'id'          => 'afterbuy',
+    'id'          => \benedikt99\afterbuy\Module::MODULE_ID,
     'title'       => 'Export Order to afterbuy',
     'description' => 'Export Order to afterbuy',
     'thumbnail'   => 'pictures/bn_logo.png',
