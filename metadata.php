@@ -4,14 +4,14 @@
  * Copyright © benedikt nünemann. All rights reserved.
  */
 
-# use nuenemann\afterbuy\Model\Order as BNOrder;
+# use nuenemann\AfterbuyExport\Model\Order as BNOrder;
 
 $sMetadataVersion = '2.1';
 /**
  * Module information
  */
 $aModule = [
-    'id'          => \nuenemann\afterbuy\Module::MODULE_ID,
+    'id'          => \nuenemann\AfterbuyExport\Module::MODULE_ID,
     'title'       => 'Export Order to afterbuy',
     'description' => 'Export Order to afterbuy',
     'thumbnail'   => 'bn_logo.png',
@@ -20,7 +20,7 @@ $aModule = [
     'url'         => 'https://github.com/benedikt99-ger/afterbuy',
     'email'       => 'benedikt@nuenemann.de',
 	'extend' => [
-		\OxidEsales\Eshop\Application\Model\Order::class => \nuenemann\afterbuy\Model\Order::class,
+		\OxidEsales\Eshop\Application\Model\Order::class => \nuenemann\AfterbuyExport\Model\Order::class,
 	],
     'settings' => [
         array('group' => 'afterbuy_api',  'name' => 'sPartnerid',    'type' => 'str', 'value' => ''),
