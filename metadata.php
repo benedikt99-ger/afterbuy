@@ -4,8 +4,6 @@
  * Copyright © benedikt nünemann. All rights reserved.
  */
 
-# use nuenemann\AfterbuyExport\Model\Order as BNOrder;
-
 $sMetadataVersion = '2.1';
 /**
  * Module information
