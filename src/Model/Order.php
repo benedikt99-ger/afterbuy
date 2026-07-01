@@ -9,6 +9,8 @@ declare(strict_types=1);
 
 namespace nuenemann\AfterbuyExport\Model;
 use OxidEsales\Eshop\Application\Model\Basket;
+use OxidEsales\Eshop\Application\Model\User;
+use OxidEsales\Eshop\Core\Registry;
 
 /**
  * @eshopExtension
