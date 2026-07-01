@@ -8,6 +8,7 @@
 declare(strict_types=1);
 
 namespace nuenemann\AfterbuyExport\Model;
+use OxidEsales\Eshop\Application\Model\Basket;
 
 /**
  * @eshopExtension
