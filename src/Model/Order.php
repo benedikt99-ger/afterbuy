@@ -30,7 +30,7 @@ class Order extends Order_parent
    * @param boolean $blRecalculatingOrder
    * @return boolean 
    */
-  public function finalizeOrder( oxBasket $oBasket, $oUser, $blRecalculatingOrder = false )
+  public function finalizeOrder( Basket $oBasket, $oUser, $blRecalculatingOrder = false )
   {
     $return = parent::finalizeOrder($oBasket, $oUser, $blRecalculatingOrder);
 
