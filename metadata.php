@@ -21,8 +21,8 @@ $aModule = [
 		\OxidEsales\Eshop\Application\Model\Order::class => \nuenemann\AfterbuyExport\Model\Order::class,
 	],
     'controllers' => [
-        'OrderController'  => \VendorName\TrackingModule\Controller\Admin\AfterbuyExportController::class,
-        'ordertracking'    => \VendorName\TrackingModule\Controller\Admin\OrderTrackingController::class,
+        'OrderController'  => \nuenemann\AfterbuyExport\Controller\Admin\AfterbuyExportController::class,
+        'ordertracking'    => \nuenemann\AfterbuyExport\Controller\Admin\OrderTrackingController::class,
     ],	
     'settings' => [
         array('group' => 'afterbuy_api',  'name' => 'sPartnerid',    'type' => 'str', 'value' => ''),
