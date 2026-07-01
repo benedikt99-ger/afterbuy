@@ -20,6 +20,10 @@ $aModule = [
 	'extend' => [
 		\OxidEsales\Eshop\Application\Model\Order::class => \nuenemann\AfterbuyExport\Model\Order::class,
 	],
+    'controllers' => [
+        'OrderController'  => \VendorName\TrackingModule\Controller\Admin\AfterbuyExportController::class,
+        'ordertracking'    => \VendorName\TrackingModule\Controller\Admin\OrderTrackingController::class,
+    ],	
     'settings' => [
         array('group' => 'afterbuy_api',  'name' => 'sPartnerid',    'type' => 'str', 'value' => ''),
         array('group' => 'afterbuy_api',  'name' => 'sPartnerPass',  'type' => 'str', 'value' => ''),
