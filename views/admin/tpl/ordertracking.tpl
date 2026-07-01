@@ -1,15 +1,15 @@
-[{$smarty.block.parent}]
+{% include "headitem.html.twig" with {title: "GENERAL_ADMIN_TITLE"|translate} %}
 
-<form name="myedit" id="myedit" action="[{$oViewConf->getSelfLink()}]" method="post">
-    [{$oViewConf->getHiddenSid()}]
-    <input type="hidden" name="oxid" value="[{$oxid}]">
+<form name="myedit" id="myedit" action="{{ oViewConf.getSelfLink() }}" method="post">
+    {{ oViewConf.getHiddenSid()|raw }}
+    <input type="hidden" name="oxid" value="{{ oxid }}">
     <input type="hidden" name="cl" value="ordertracking">
 
     <table cellspacing="0" cellpadding="0" border="0" width="100%">
         <tr>
             <td class="edittext" valign="top">
                 <b>Tracking number</b><br>
-                <input type="text" name="trackingnumber" value="[{$trackingnumber}]" size="40">
+                <input type="text" name="trackingnumber" value="{{ trackingnumber }}" size="40">
             </td>
         </tr>
         <tr>
@@ -21,16 +21,19 @@
                        onclick="document.myedit.fnc.value='sendTracking'; return true;">
             </td>
         </tr>
-        [{if $sendSuccess === true}]
+        {% if sendSuccess === true %}
         <tr>
             <td class="edittext" style="color:green;">Tracking number sent to customer.</td>
         </tr>
-        [{elseif $sendSuccess === false}]
+        {% elseif sendSuccess === false %}
         <tr>
             <td class="edittext" style="color:red;">Could not send tracking email. Please check the tracking number and customer email.</td>
         </tr>
-        [{/if}]
+        {% endif %}
     </table>
 
     <input type="hidden" name="fnc" value="">
 </form>
+
+{% include "bottomnaviitem.html.twig" %}
+{% include "bottomitem.html.twig" %}
