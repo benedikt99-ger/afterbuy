@@ -11,6 +11,7 @@ namespace nuenemann\AfterbuyExport\Controller\Admin;
 
 use OxidEsales\Eshop\Application\Model\Order as EshopOrder;
 use OxidEsales\Eshop\Core\Registry as EshopRegistry;
+use OxidEsales\Eshop\Application\Controller\Admin\AdminController;
 
 /**
  * @eshopExtension
@@ -19,22 +20,27 @@ use OxidEsales\Eshop\Core\Registry as EshopRegistry;
  * the shop start controller.
  * NOTE: class must not be final.
  */
-class OrderTrackingController extends OrderTrackingController_parent
+class OrderTrackingController extends AdminController
 {
 
-    /**
-     * All we need here is to fetch the information we need from a service.
-     * As in our example we extend a block of a template belonging ONLY
-     * to the shop's StartController, we extend that Controller with a new method.
-     * NOTE: only leaf classes can be extended this way. The FrontendController class which
-     *      many Controllers inherit from cannot be extended this way.
-     */
-    public function getOrder(): string
+    protected $_sThisTemplate = '@fa_nutrition_facts/admin/afterbuyexport';
+    public function render()
     {
-        $order  = $this->getOrder();
-        $result = $order;
-        return $result;
+        // $editRequest = $this->getServiceFromContainer(EditRequestInterface::class);
+        // $factsSettings = $this->getServiceFromContainer(FactsSettingsInterface::class);
+        // $this->addTplParam('measurementOptions', $factsSettings->getMeasurementOptions());
+        // $this->addTplParam('additionalInformationOptions', $factsSettings->getAdditionalInformationOptions());
+        // $productFacts = $factsService->getProductFacts($editRequest->getProductId());
+        // $this->addTplParam('nutritionFacts', $productFacts->getNutritionFacts());
+        return parent::render();
     }
 
+    public function saveData(): void
+    {
+        // $editRequest = $this->getServiceFromContainer(EditRequestInterface::class);
+        // $productFactsFactory = $this->getServiceFromContainer(ProductFactsFactoryInterface::class);
+        // $factsService = $this->getServiceFromContainer(FactsServiceInterface::class);
+        // $factsService->saveProductFacts($editRequest->getProductId(), $productFactsFactory->getFromRequest());
+    }
 
 }
