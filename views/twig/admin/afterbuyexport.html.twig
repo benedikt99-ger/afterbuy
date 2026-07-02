@@ -4,7 +4,7 @@
     {{ oViewConf.getHiddenSid()|raw }}
     <input type="hidden" name="oxid" value="{{ oxid }}">
     <input type="hidden" name="cl" value="ordertracking">
-
+	<input type="hidden" name="fnc" value="afterbuy">
     <table cellspacing="0" cellpadding="0" border="0" width="100%">
 		<tr>
             <td class="edittext" valign="top">
@@ -16,6 +16,10 @@
         <tr><td class="edittext" valign="top"><b>Afterbuy UID</b><br><input type="text" name="trackingnumber" value="{{ OXTRACKCODE }}" size="40"></td></tr>
 	</tbody></table>
 
+		<br>
+		<a href="http://net.afterbuy.de/fb.aspx?ui={{ OXTRACKCODE }}&amp;nomail=1" target="_blank"><font color="#FF0000">Afterbuy Feedback aufrufen</font></a>
+
+
 			</td>
         </tr>
         <tr>
@@ -23,8 +27,11 @@
                 <input type="submit" class="edittext" name="save" value="Save"
                        onclick="document.myedit.fnc.value='save'; return true;">
                 &nbsp;
-                <input type="submit" class="edittext" name="sendTracking" value="Save &amp; send to customer"
+                <input type="submit" class="edittext" name="sendTracking" value="NACH AFTERBUY ÜBETRAGEN"
                        onclick="document.myedit.fnc.value='sendTracking'; return true;">
+				<!--
+				<input type="submit" class="edittext" name="save" value="NACH AFTERBUY ÜBETRAGEN"><br><br>					   
+				-->
             </td>
         </tr>
         {% if sendSuccess === true %}
@@ -43,3 +50,5 @@
 
 {% include "bottomnaviitem.html.twig" %}
 {% include "bottomitem.html.twig" %}
+
+        
