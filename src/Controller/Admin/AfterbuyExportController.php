@@ -19,7 +19,7 @@ use OxidEsales\Eshop\Core\Registry as EshopRegistry;
  * the shop start controller.
  * NOTE: class must not be final.
  */
-class AfterbuyExportController extends AfterbuyExportController_parent
+class AfterbuyExportController extends AdminController
 {
 
     /**
