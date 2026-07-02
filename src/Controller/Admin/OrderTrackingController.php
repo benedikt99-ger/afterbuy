@@ -30,10 +30,40 @@ class OrderTrackingController extends AdminController
 
     public function saveData(): void
     {
+		$orderId = $this->getEditObjectId();
+		if (!$orderId) {
+			return;
+		}
+
+		$trackingnumber = Registry::getRequest()->getRequestEscapedParameter('trackingnumber');
+
+		$sLogfile = Registry::getConfig()->getLogsDir() .'bn.log';
+		file_put_contents($sLogfile, trim(date('Y-m-d H:i:s')." saveData ".$trackingnumber ).PHP_EOL,FILE_APPEND);		
+
+
+		$order = oxNew(Order::class);
+		if ($order->load($orderId)) {
+			$order->oxorder__oxtrackcode = new \OxidEsales\Eshop\Core\Field($trackingnumber, \OxidEsales\Eshop\Core\Field::T_RAW);
+			$order->save();
+		}		
     }
 	
-    public function getOrderNr(): string
+    public function sendTracking(): void
     {
+		$orderId = $this->getEditObjectId();
+		if (!$orderId) {
+			return;
+		}
+
+		$trackingnumber = Registry::getRequest()->getRequestEscapedParameter('trackingnumber');
+
+		$sLogfile = Registry::getConfig()->getLogsDir() .'bn.log';
+		file_put_contents($sLogfile, trim(date('Y-m-d H:i:s')." sendTracking ".$trackingnumber ).PHP_EOL,FILE_APPEND);		
+
+		$order = oxNew(Order::class);
+		if ($order->load($orderId)) {
+			
+		}		
     }
 
 
