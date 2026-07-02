@@ -39,6 +39,21 @@ class AfterbuyExportController extends AdminDetailsController
 
     public function saveData(): void
     {
+		$orderId = $this->getEditObjectId();
+		if (!$orderId) {
+			return;
+		}
+
+		$afterbuyuid = Registry::getRequest()->getRequestEscapedParameter('afterbuyuid');
+
+		$order = oxNew(Order::class);
+		if ($order->load($orderId)) {
+			$sLogfile = Registry::getConfig()->getLogsDir() .'bn.log';
+			file_put_contents($sLogfile, trim(date('Y-m-d H:i:s')." saveData afterbuyuid ".$afterbuyuid ).PHP_EOL,FILE_APPEND);				
+			
+			$order->oxorder__oxtrackcode = new \OxidEsales\Eshop\Core\Field($afterbuyuid, \OxidEsales\Eshop\Core\Field::T_RAW);
+			$order->save();
+		}		
     }
 	
 }
