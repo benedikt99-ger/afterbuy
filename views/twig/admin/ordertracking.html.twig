@@ -1,12 +1,9 @@
-{% extends "@admin/order/order" %}
-
-{% block content %}
-
 {% include "headitem.html.twig" with {title: "GENERAL_ADMIN_TITLE"|translate} %}
+
 <form name="myedit" id="myedit" action="{{ oViewConf.getSelfLink() }}" method="post">
     {{ oViewConf.getHiddenSid()|raw }}
     <input type="hidden" name="oxid" value="{{ oxid }}">
-    <input type="hidden" name="cl" value="ordertracking">
+    <input type="hidden" name="cl" value="{{ oViewConf.getActiveClassName() }}">
 
     <table cellspacing="0" cellpadding="0" border="0" width="100%">
         <tr>
@@ -40,5 +37,3 @@
 
 {% include "bottomnaviitem.html.twig" %}
 {% include "bottomitem.html.twig" %}
-
-{% endblock %}
