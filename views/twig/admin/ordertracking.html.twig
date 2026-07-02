@@ -1,5 +1,8 @@
-{% include "headitem.html.twig" with {title: "GENERAL_ADMIN_TITLE"|translate} %}
+{% extends "@admin/order/order" %}
 
+{% block content %}
+
+{% include "headitem.html.twig" with {title: "GENERAL_ADMIN_TITLE"|translate} %}
 <form name="myedit" id="myedit" action="{{ oViewConf.getSelfLink() }}" method="post">
     {{ oViewConf.getHiddenSid()|raw }}
     <input type="hidden" name="oxid" value="{{ oxid }}">
@@ -37,3 +40,5 @@
 
 {% include "bottomnaviitem.html.twig" %}
 {% include "bottomitem.html.twig" %}
+
+{% endblock %}
