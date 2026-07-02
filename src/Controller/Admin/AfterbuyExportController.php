@@ -9,13 +9,6 @@ use OxidEsales\Eshop\Application\Controller\Admin\AdminController;
 use OxidEsales\Eshop\Application\Model\Order;
 use OxidEsales\Eshop\Core\Registry;
 
-/**
- * @eshopExtension
- *
- * This is an example for a module extension (chain extend) of
- * the shop start controller.
- * NOTE: class must not be final.
- */
 class AfterbuyExportController extends AdminDetailsController
 {
 
