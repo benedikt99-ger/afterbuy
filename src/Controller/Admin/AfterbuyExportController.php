@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 namespace nuenemann\AfterbuyExport\Controller\Admin;
 
-use OxidEsales\Eshop\Application\Model\Order as EshopOrder;
-use OxidEsales\Eshop\Core\Registry as EshopRegistry;
+use OxidEsales\Eshop\Application\Model\Order;
+use OxidEsales\Eshop\Core\Registry;
 use OxidEsales\Eshop\Application\Controller\Admin\AdminController;
 
 /**
@@ -21,13 +21,17 @@ class AfterbuyExportController extends AdminController
     protected $_sThisTemplate = '@bn_afterbuy/admin/afterbuyexport';
     public function render()
     {
-        // $editRequest = $this->getServiceFromContainer(EditRequestInterface::class);
-        // $factsSettings = $this->getServiceFromContainer(FactsSettingsInterface::class);
-        // $this->addTplParam('measurementOptions', $factsSettings->getMeasurementOptions());
-        // $this->addTplParam('additionalInformationOptions', $factsSettings->getAdditionalInformationOptions());
-        // $productFacts = $factsService->getProductFacts($editRequest->getProductId());
-        // $this->addTplParam('nutritionFacts', $productFacts->getNutritionFacts());
-        return parent::render();
+		// $result = "@bn_afterbuy/admin/afterbuyexport";
+		// parent::render();
+		
+		$order = $this->getOrder();
+        $orderId = $this->getEditObjectId();
+        $this->addTplParam('oxid', $orderId);
+        $this->addTplParam('order', $order);
+		$this->addTplParam('afterbuykdnr', $order->oxorder__oxbillnr->value);
+		$this->addTplParam('afterbuyuid', $order->oxorder__oxtrackcode->value);
+        // return $result;
+		return parent::render();
     }
 
     public function saveData(): void
@@ -38,12 +42,4 @@ class AfterbuyExportController extends AdminController
         // $factsService->saveProductFacts($editRequest->getProductId(), $productFactsFactory->getFromRequest());
     }
 	
-    public function getOrder(): string
-    {
-        $order  = $this->getOrder();
-        $result = $order;
-        return $result;
-    }
-
-
 }
