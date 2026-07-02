@@ -32,7 +32,7 @@ class OrderTrackingController extends AdminController
     {
     }
 	
-    public function getOrder(): string
+    public function getOrderNr(): string
     {
     }
 
