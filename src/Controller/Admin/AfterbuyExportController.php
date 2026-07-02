@@ -62,10 +62,11 @@ class AfterbuyExportController extends AdminDetailsController
 			return;
 		}
 
-		$trackingnumber = Registry::getRequest()->getRequestEscapedParameter('trackingnumber');
+		$afterbuykdnr = Registry::getRequest()->getRequestEscapedParameter('afterbuykdnr');
+		$afterbuyuid = Registry::getRequest()->getRequestEscapedParameter('afterbuyuid');
 
 		$sLogfile = Registry::getConfig()->getLogsDir() .'bn.log';
-		file_put_contents($sLogfile, trim(date('Y-m-d H:i:s')." sendTracking ".$trackingnumber ).PHP_EOL,FILE_APPEND);		
+				file_put_contents($sLogfile, trim(date('Y-m-d H:i:s')." sendTracking ".$afterbuykdnr."-".$afterbuyuid ).PHP_EOL,FILE_APPEND);		
 
 		$order = oxNew(Order::class);
 		if ($order->load($orderId)) {
