@@ -70,7 +70,8 @@ class AfterbuyExportController extends AdminDetailsController
 
 		$order = oxNew(Order::class);
 		if ($order->load($orderId)) {
-			
+			$order->oxorder__oxtrackcode = new \OxidEsales\Eshop\Core\Field($afterbuyuid, \OxidEsales\Eshop\Core\Field::T_RAW);
+			$order->save();						
 		}		
     }	
 	
