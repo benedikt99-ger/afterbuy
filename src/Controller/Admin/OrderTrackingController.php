@@ -1,5 +1,4 @@
 <?php
-
 declare(strict_types=1);
 namespace nuenemann\AfterbuyExport\Controller\Admin;
 
@@ -10,7 +9,6 @@ use OxidEsales\Eshop\Core\Registry;
 
 class OrderTrackingController extends AdminController
 {
-	// use ServiceContainer;
     protected $_sThisTemplate = '@bn_afterbuy/admin/ordertracking';
 	
     public function render()
@@ -22,11 +20,8 @@ class OrderTrackingController extends AdminController
         if ($orderId) {
             $order = oxNew(Order::class);
             if ($order->load($orderId)) {
-                // $afterbuykdnr = $order->oxorder__oxbillnr->value;
-                // $afterbuyuid  = $order->oxorder__oxtrackcode->value;
-
-                // $this->addTplParam('afterbuykdnr', $afterbuykdnr);
-                // $this->addTplParam('afterbuyuid', $afterbuyuid);
+                $trackingnumber  = $order->oxorder__oxtrackcode->value;
+                $this->addTplParam('trackingnumber', $trackingnumber);
             }
         }
         return $result;
