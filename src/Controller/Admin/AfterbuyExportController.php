@@ -55,5 +55,22 @@ class AfterbuyExportController extends AdminDetailsController
 			$order->save();
 		}		
     }
+    public function sendTracking(): void
+    {
+		$orderId = $this->getEditObjectId();
+		if (!$orderId) {
+			return;
+		}
+
+		$trackingnumber = Registry::getRequest()->getRequestEscapedParameter('trackingnumber');
+
+		$sLogfile = Registry::getConfig()->getLogsDir() .'bn.log';
+		file_put_contents($sLogfile, trim(date('Y-m-d H:i:s')." sendTracking ".$trackingnumber ).PHP_EOL,FILE_APPEND);		
+
+		$order = oxNew(Order::class);
+		if ($order->load($orderId)) {
+			
+		}		
+    }	
 	
 }
