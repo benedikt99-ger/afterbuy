@@ -1,10 +1,5 @@
 <?php
 
-/**
- * Copyright © OXID eSales AG. All rights reserved.
- * See LICENSE file for license details.
- */
-
 declare(strict_types=1);
 
 namespace nuenemann\AfterbuyExport\Controller\Admin;
@@ -23,13 +18,26 @@ use OxidEsales\Eshop\Application\Controller\Admin\AdminController;
 class AfterbuyExportController extends AdminController
 {
 
-    /**
-     * All we need here is to fetch the information we need from a service.
-     * As in our example we extend a block of a template belonging ONLY
-     * to the shop's StartController, we extend that Controller with a new method.
-     * NOTE: only leaf classes can be extended this way. The FrontendController class which
-     *      many Controllers inherit from cannot be extended this way.
-     */
+    protected $_sThisTemplate = '@bn_afterbuy/admin/afterbuyexport';
+    public function render()
+    {
+        // $editRequest = $this->getServiceFromContainer(EditRequestInterface::class);
+        // $factsSettings = $this->getServiceFromContainer(FactsSettingsInterface::class);
+        // $this->addTplParam('measurementOptions', $factsSettings->getMeasurementOptions());
+        // $this->addTplParam('additionalInformationOptions', $factsSettings->getAdditionalInformationOptions());
+        // $productFacts = $factsService->getProductFacts($editRequest->getProductId());
+        // $this->addTplParam('nutritionFacts', $productFacts->getNutritionFacts());
+        return parent::render();
+    }
+
+    public function saveData(): void
+    {
+        // $editRequest = $this->getServiceFromContainer(EditRequestInterface::class);
+        // $productFactsFactory = $this->getServiceFromContainer(ProductFactsFactoryInterface::class);
+        // $factsService = $this->getServiceFromContainer(FactsServiceInterface::class);
+        // $factsService->saveProductFacts($editRequest->getProductId(), $productFactsFactory->getFromRequest());
+    }
+	
     public function getOrder(): string
     {
         $order  = $this->getOrder();
