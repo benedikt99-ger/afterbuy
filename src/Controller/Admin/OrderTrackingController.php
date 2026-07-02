@@ -11,7 +11,7 @@ use OxidEsales\Eshop\Application\Controller\Admin\AdminController;
 class OrderTrackingController extends AdminController
 {
 	// use ServiceContainer;
-    protected $_sThisTemplate = '@bn_afterbuy/admin/afterbuyexport';
+    protected $_sThisTemplate = '@bn_afterbuy/admin/ordertracking';
     public function render()
     {
 
