@@ -21,7 +21,7 @@ $aModule = [
 		\OxidEsales\Eshop\Application\Model\Order::class => \nuenemann\AfterbuyExport\Model\Order::class,
 	],
     'controllers' => [
-        'OrderController'  => \nuenemann\AfterbuyExport\Controller\Admin\AfterbuyExportController::class,
+        'afterbuyexport'  => \nuenemann\AfterbuyExport\Controller\Admin\AfterbuyExportController::class,
         'ordertracking'    => \nuenemann\AfterbuyExport\Controller\Admin\OrderTrackingController::class,
     ],	
     'settings' => [
