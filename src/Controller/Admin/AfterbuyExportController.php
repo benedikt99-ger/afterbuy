@@ -22,11 +22,15 @@ class AfterbuyExportController extends AdminDetailsController
         if ($orderId) {
             $order = oxNew(Order::class);
             if ($order->load($orderId)) {
+				$ordernr = $order->oxorder__oxordernr->value;
                 $afterbuykdnr = $order->oxorder__oxbillnr->value;
                 $afterbuyuid  = $order->oxorder__oxtrackcode->value;
-
+				$this->addTplParam('ordernr', $ordernr);
                 $this->addTplParam('afterbuykdnr', $afterbuykdnr);
                 $this->addTplParam('afterbuyuid', $afterbuyuid);
+
+				$sLogfile = Registry::getConfig()->getLogsDir() .'bn.log';
+				file_put_contents($sLogfile, trim(date('Y-m-d H:i:s')." render ".$afterbuykdnr ).PHP_EOL,FILE_APPEND);				
             }
         }
         return $result;
