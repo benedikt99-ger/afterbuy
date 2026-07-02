@@ -11,6 +11,7 @@ namespace nuenemann\AfterbuyExport\Controller\Admin;
 
 use OxidEsales\Eshop\Application\Model\Order as EshopOrder;
 use OxidEsales\Eshop\Core\Registry as EshopRegistry;
+use OxidEsales\Eshop\Application\Controller\Admin\AdminController;
 
 /**
  * @eshopExtension
