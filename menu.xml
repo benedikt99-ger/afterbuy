@@ -3,7 +3,7 @@
     <OXMENU id="NAVIGATION_ESHOPADMIN">
         <MAINMENU id="mxorders">
             <SUBMENU id="mxdisplayorders" cl="admin_order" list="order_list">
-                 <TAB id="AFTERBUYEXPORT" cl="OrderController" />
+                 <TAB id="AFTERBUYEXPORT" cl="afterbuyexport" />
                 <TAB id="ORDERTRACKING" cl="ordertracking" />
             </SUBMENU>
         </MAINMENU>
