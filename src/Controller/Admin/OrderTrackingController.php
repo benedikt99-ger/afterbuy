@@ -23,7 +23,7 @@ use OxidEsales\Eshop\Application\Controller\Admin\AdminController;
 class OrderTrackingController extends AdminController
 {
 	use ServiceContainer;
-    protected $_sThisTemplate = '@afterbuy/admin/afterbuyexport';
+    protected $_sThisTemplate = '@bn_afterbuy/admin/afterbuyexport';
     public function render()
     {
         // $editRequest = $this->getServiceFromContainer(EditRequestInterface::class);
