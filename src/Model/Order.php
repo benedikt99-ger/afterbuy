@@ -80,12 +80,8 @@ class Order extends Order_parent
 		// $Host = "https://api.afterbuy.de/afterbuy/ShopInterface.aspx";		
 		$my_array['Action'] = 'new';
 
-		// $my_array['Partnerid'] = "2162";
-		// $my_array['PartnerPass'] = "19gumb65";
-		// $my_array['UserID'] = "matratze-marquardt";
-		
-		$my_array['PartnerToken'] = "8a7791f6-91e0-40ff-ad5e-fe760876a753";
-		$my_array['AccountToken'] = "e47dfec8-e2c6-4dc3-834f-550e2c91d6a6";
+		$my_array['PartnerToken'] =	Registry::getConfig()->getConfigParam('sPartnerToken');
+		$my_array['AccountToken'] =	Registry::getConfig()->getConfigParam('sAccountToken');	  
 
 		// Kunde  
 		$my_array['Kbenutzername'] = $this->oxorder__oxbillfname.$this->oxorder__oxbilllname;
