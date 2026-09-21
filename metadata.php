@@ -25,8 +25,8 @@ $aModule = [
         'ordertracking'    => \nuenemann\AfterbuyExport\Controller\Admin\OrderTrackingController::class,
     ],	
     'settings' => [
-        array('group' => 'afterbuy_api',  'name' => 'sPartnerid',    'type' => 'str', 'value' => ''),
-        array('group' => 'afterbuy_api',  'name' => 'sPartnerPass',  'type' => 'str', 'value' => ''),
-		array('group' => 'afterbuy_api',  'name' => 'sUserID',       'type' => 'str', 'value' => ''),
+        array('group' => 'afterbuy_api',  'name' => 'sPartnerToken',    'type' => 'str', 'value' => ''),
+        array('group' => 'afterbuy_api',  'name' => 'sAccountToken',  'type' => 'str', 'value' => ''),
+		array('group' => 'afterbuy_api',  'name' => 'sEMail',       'type' => 'str', 'value' => ''),
     ]
 ];
