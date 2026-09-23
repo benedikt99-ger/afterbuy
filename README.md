@@ -7,7 +7,7 @@ OXID eShop 7 .........
 
 ## Features
 
-* ....
+* sends order direct to aftery via XML API
 
 
 ## Compatibility
